@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Raman Verma — Personal Portfolio</title>
+
+  <style>
+    /* ===================== ROOT VARIABLES ===================== */
+    :root {
+      --bg: #f3f6f8;
+      --card: #ffffff;
+      --accent: #2e8b57;
+      --muted: #6b7280;
+      --glass: rgba(255, 255, 255, 0.6);
+      --radius: 14px;
+      --maxw: 1100px;
+      --gap: 20px;
+      --shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+    }
+
+    /* ===================== GLOBAL STYLES ===================== */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #eef2f3 0%, #fbfcfe 100%);
+      color: #111827;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    /* ===================== SIDEBAR ===================== */
+    .sidebar {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 40px;
+    }
+
+    .profile { text-align: center; }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      object-fit: cover;
+      margin: 0 auto 14px;
+      background: linear-gradient(135deg, #e6f2ec, #f0fff7);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+      letter-spacing: 0.2px;
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: #111827;
+    }
+
+    .contact-item small { color: var(--muted); }
+
+    .skills { margin-top: 18px; }
+    .skill {
+      display: inline-block;
+      background: linear-gradient(90deg, rgba(46,139,87,0.12), rgba(46,139,87,0.06));
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin: 6px 6px 0 0;
+    }
+
+    /* ===================== MAIN CONTENT ===================== */
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-left h2 { margin: 0; font-size: 1.6rem; }
+    .hero-left p { color: var(--muted); margin: 8px 0 0; }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 18px rgba(46,139,87,0.14);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid rgba(46,139,87,0.12);
+      box-shadow: none;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .project {
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(16,24,40,0.02), rgba(16,24,40,0.01));
+      border: 1px solid rgba(16,24,40,0.03);
+    }
+
+    .project h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .project p { margin: 0 0 12px; color: var(--muted); font-size: 0.92rem; }
+
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.8rem;
+      padding: 6px 8px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.04);
+      color: #374151;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid rgba(16,24,40,0.06);
+      padding: 10px 12px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: absolute;
+      left: -7px;
+      top: 14px;
+    }
+
+    .muted { color: var(--muted); font-size: 0.95rem; }
+
+    /* Form */
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(16,24,40,0.08);
+      font-size: 0.95rem;
+      resize: none;
+    }
+
+    form textarea { grid-column: 1 / -1; min-height: 110px; }
+
+    .form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .small { font-size: 0.9rem; color: var(--muted); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .container { grid-template-columns: 1fr; padding-bottom: 40px; }
+      .sidebar { position: relative; top: 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; align-items: flex-start; gap: 12px; }
+      form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" role="main">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <div class="profile">
+        <img class="avatar" src="https://via.placeholder.com/300x300.png?text=Raman" alt="Raman Verma avatar">
+        <h1>Raman Verma</h1>
+        <div class="role">B.Tech CSE (AIML) • Frontend & ML Enthusiast</div>
+      </div>
+
+      <p class="bio">
+        I build clean frontend experiences and experiment with machine learning models.
+        Currently learning full-stack workflows and deployment.
+      </p>
+
+      <div class="contact-list">
+        <div class="contact-item"><strong>Email:</strong> <small>ramanverma@example.com</small></div>
+        <div class="contact-item"><strong>Location:</strong> <small>India</small></div>
+        <div class="contact-item"><strong>GitHub:</strong> <small>github.com/yourusername</small></div>
+        <div class="contact-item"><strong>LinkedIn:</strong> <small>linkedin.com/in/yourprofile</small></div>
+      </div>
+
+      <div class="skills">
+        <h4 style="margin:14px 0 8px;">Skills</h4>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Python</span>
+        <span class="skill">Machine Learning</span>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="main">
+
+      <!-- HERO -->
+      <section class="card hero">
+        <div class="hero-left">
+          <h2>Hi, I'm Raman — I build things for the web.</h2>
+          <p>I create responsive web interfaces and explore ML to add intelligence to products. I enjoy turning ideas into clean, user-friendly code.</p>
+          <div style="margin-top:12px;">
+            <a class="btn" href="#">View Projects</a>
+            <a class="btn ghost" href="#" style="margin-left:8px;">Download Resume</a>
+          </div>
+        </div>
+        <div class="hero-right" style="min-width:160px; text-align:right;">
+          <div style="background:var(--glass); border-radius:10px; padding:12px; display:inline-block;">
+            <div style="font-size:0.9rem; color:var(--muted)">Experience</div>
+            <div style="font-weight:700; font-size:1.2rem;">1+ yrs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card">
+        <h2>Selected Projects</h2>
+        <p class="small">A few highlights — code links and live demos available on my GitHub profile.</p>
+
+        <div class="projects-grid">
+          <article class="project">
+            <h3>Portfolio Website</h3>
+            <p>A responsive portfolio built with HTML, CSS and JS for theme toggle. Focus on accessibility and performance.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>To-Do App</h3>
+            <p>Vanilla JavaScript app with localStorage persistence, task filters, and drag & drop reorder support.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">UX</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Movie Recommender (ML)</h3>
+            <p>Prototype recommender using Python (scikit-learn) and Flask API to serve predictions.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">ML</span>
+              <span class="tag">API</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>E-Commerce UI</h3>
+            <p>Product listing and cart UI built with React; focused on modular components and responsive grid.</p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Frontend</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE & EDUCATION -->
+      <section class="card">
+        <h2>Experience & Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <strong>Frontend Intern — XYZ Studio</strong>
+              <span class="muted">2024</span>
+            </div>
+            <div class="muted">Built responsive components, optimized performance, and ran A/B tests.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <strong>B.Tech Computer Science (AIML)</strong>
+              <span class="muted">2022 — Present</span>
+            </div>
+            <div class="muted">Studying algorithms, ML fundamentals, and web development.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card">
+        <h2>Contact Me</h2>
+        <p class="small" style="margin-top:8px">Send a quick message — I typically respond within a few days.</p>
+
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Write your message..." required></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send Message</button>
+            <a href="mailto:ramanverma@example.com" class="btn ghost">Email Me</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div>© <strong>Raman Verma</strong> — Built with HTML & CSS</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+

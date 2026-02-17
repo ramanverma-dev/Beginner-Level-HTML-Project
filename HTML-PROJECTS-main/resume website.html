@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raman Verma — Resume</title>
+  <style>
+    /* ================= ROOT ================ */
+    :root{
+      --bg: #f5f7f9;
+      --card: #ffffff;
+      --accent: #2e8b57;
+      --muted: #6b7280;
+      --radius: 12px;
+      --maxw: 900px;
+      --gap: 18px;
+      --shadow: 0 8px 26px rgba(16,24,40,0.06);
+      --print-margin: 16mm;
+    }
+
+    /* ================ RESET ================ */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#0f1724;
+      display:flex;
+      justify-content:center;
+      padding:28px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ============== LAYOUT ================ */
+    .resume {
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 2fr;
+      gap:var(--gap);
+    }
+
+    /* ============= SIDEBAR =============== */
+    .side {
+      background: linear-gradient(180deg,#ffffff,#fbfffb);
+      padding:26px;
+      border-right:1px solid rgba(16,24,40,0.04);
+    }
+
+    .avatar {
+      width:110px;
+      height:110px;
+      border-radius:14px;
+      object-fit:cover;
+      display:block;
+      margin:0 auto 14px;
+      background:linear-gradient(135deg,#e6f2ec,#f0fff7);
+    }
+
+    .name {
+      text-align:center;
+      margin-bottom:8px;
+    }
+
+    .name h1{font-size:1.25rem}
+    .name p{color:var(--muted);font-size:0.92rem;margin-top:6px}
+
+    .side-section{margin-top:18px}
+    .side-section h4{
+      font-size:0.9rem;color:var(--accent);margin-bottom:10px;
+      letter-spacing:0.3px;
+    }
+
+    .contact-list, .skills-list, .tools-list {
+      list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.92rem;color:#111827;
+    }
+
+    .contact-list li small, .skills-list li small{color:var(--muted);font-size:0.88rem}
+
+    .skill-pill{
+      display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(46,139,87,0.08);
+      color:var(--accent);font-weight:600;font-size:0.82rem;margin:6px 6px 0 0;
+    }
+
+    /* ============== MAIN ================ */
+    .main {
+      padding:26px;
+    }
+
+    .section{margin-bottom:22px}
+    .section h3{font-size:1.05rem;color:#0f1724;margin-bottom:8px}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    .summary {
+      font-size:0.95rem;color:#111827;line-height:1.45;
+    }
+
+    /* Experience / Education items */
+    .item {
+      padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(16,24,40,0.01), rgba(16,24,40,0.00));
+      border:1px solid rgba(16,24,40,0.03);margin-bottom:12px;
+    }
+
+    .item h4{margin-bottom:6px;font-size:0.98rem}
+    .item .meta{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .item .meta .role{font-weight:600}
+    .item p{margin-top:8px;color:var(--muted);font-size:0.92rem;line-height:1.4}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{padding:10px;border-radius:8px;background:rgba(16,24,40,0.02);font-size:0.92rem}
+
+    /* Buttons */
+    .actions{display:flex;gap:10px;justify-content:flex-end}
+    .btn{
+      background:var(--accent);color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.9rem;
+      display:inline-block;
+    }
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(46,139,87,0.12)}
+
+    /* ============== FOOTER (print info) =============== */
+    .print-note{font-size:0.85rem;color:var(--muted);margin-top:8px;text-align:right}
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width:880px){
+      .resume{grid-template-columns:1fr; padding:0}
+      .side{border-right:none;border-bottom:1px solid rgba(16,24,40,0.04)}
+      .projects-grid{grid-template-columns:1fr}
+      .actions{justify-content:flex-start}
+    }
+
+    /* ============= PRINT ============== */
+    @media print{
+      body{padding:0}
+      .resume{box-shadow:none;border-radius:0}
+      @page{margin: var(--print-margin)}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume" role="region" aria-label="Resume of Raman Verma">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="side" aria-label="Sidebar">
+      <img class="avatar" src="https://via.placeholder.com/300x300.png?text=Raman" alt="Raman Verma">
+
+      <div class="name">
+        <h1>Raman Verma</h1>
+        <p>B.Tech CSE (AIML) • Frontend Developer</p>
+      </div>
+
+      <div class="side-section contact">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <small>ramanverma@example.com</small></li>
+          <li><strong>Phone:</strong> <small>+91 98xxxxxxx</small></li>
+          <li><strong>Location:</strong> <small>India</small></li>
+          <li><strong>GitHub:</strong> <small>github.com/yourusername</small></li>
+        </ul>
+      </div>
+
+      <div class="side-section skills">
+        <h4>Skills</h4>
+        <div>
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="side-section tools">
+        <h4>Tools</h4>
+        <ul class="tools-list">
+          <li>VS Code • Git</li>
+          <li>Bootstrap / Tailwind</li>
+          <li>Chrome DevTools</li>
+          <li>Jupyter • scikit-learn</li>
+        </ul>
+      </div>
+
+      <div class="side-section">
+        <h4>Languages</h4>
+        <ul class="tools-list">
+          <li>English — Professional</li>
+          <li>Hindi — Native</li>
+        </ul>
+      </div>
+
+      <div class="print-note">
+        <small>Tip: Click "Download PDF" to print this resume.</small>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main" role="main">
+
+      <!-- Header / Actions -->
+      <div class="section" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <h3 style="margin-bottom:6px">Professional Summary</h3>
+          <p class="muted">Frontend developer & AIML student building user-centric web experiences. Strong fundamentals in web technologies and a growing background in machine learning and APIs.</p>
+        </div>
+
+        <div class="actions" aria-hidden="false">
+          <a class="btn" href="#" onclick="window.print();return false" title="Print or Save as PDF">Download PDF</a>
+          <a class="btn ghost" href="#" title="Download Resume (placeholder)">Download Resume</a>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <section class="section">
+        <p class="summary">
+          I am a B.Tech Computer Science (AIML) student who loves building clean, responsive frontends and exploring machine learning to add intelligence to applications. I have experience with component-driven UI, performance improvements, and integrating simple ML prototypes.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" aria-labelledby="exp">
+        <h3 id="exp">Experience</h3>
+
+        <div class="item">
+          <div class="meta">
+            <div class="role">Frontend Intern — XYZ Studio</div>
+            <div class="muted">2024</div>
+          </div>
+          <p>Worked on responsive UI components, optimized page load performance, collaborated on small A/B tests, and fixed cross-browser issues. Built modular CSS and accessible markup for public-facing pages.</p>
+        </div>
+
+        <div class="item">
+          <div class="meta">
+            <div class="role">Teaching Assistant — Web Dev Course</div>
+            <div class="muted">2023</div>
+          </div>
+          <p>Assisted students with HTML/CSS/JS fundamentals, graded assignments, and demonstrated debugging techniques and best practices for building responsive layouts.</p>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section" aria-labelledby="edu">
+        <h3 id="edu">Education</h3>
+
+        <div class="item">
+          <div class="meta">
+            <div class="role">B.Tech Computer Science (AIML) — AKTU</div>
+            <div class="muted">2022 — 2026 (expected)</div>
+          </div>
+          <p>Relevant coursework: Data Structures, Algorithms, Machine Learning, Web Development, Database Systems.</p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" aria-labelledby="projects">
+        <h3 id="projects">Projects</h3>
+
+        <div class="projects-grid">
+          <div class="project">
+            <strong>Personal Portfolio</strong>
+            <div class="muted">HTML, CSS, JS</div>
+            <p style="margin-top:8px">A responsive portfolio showcasing projects, responsive components and a theme toggle.</p>
+          </div>
+
+          <div class="project">
+            <strong>To-Do App</strong>
+            <div class="muted">JavaScript</div>
+            <p style="margin-top:8px">Vanilla JS to-do with localStorage, filters and drag & drop reorder.</p>
+          </div>
+
+          <div class="project">
+            <strong>Movie Recommender (Prototype)</strong>
+            <div class="muted">Python, Flask, scikit-learn</div>
+            <p style="margin-top:8px">Simple recommendation prototype served via a lightweight Flask API.</p>
+          </div>
+
+          <div class="project">
+            <strong>E-Commerce UI (Demo)</strong>
+            <div class="muted">React</div>
+            <p style="margin-top:8px">Product listing UI with modular components and responsive grid layout.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS / ACHIEVEMENTS -->
+      <section class="section" aria-labelledby="certs">
+        <h3 id="certs">Certifications & Achievements</h3>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="muted">Forage / Deloitte — Foundational Tasks Completed</div>
+          <div class="muted">Hackathon Participant — College Hack 2024</div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" aria-labelledby="contact">
+        <h3 id="contact">Contact</h3>
+        <p class="muted">Email: <a href="mailto:ramanverma@example.com">ramanverma@example.com</a> • GitHub: <a href="#">github.com/yourusername</a></p>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

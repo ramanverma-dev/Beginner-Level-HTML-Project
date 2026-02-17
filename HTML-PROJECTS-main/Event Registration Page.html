@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration Form</title>
+  <style>
+    /* ===== Root Variables ===== */
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --radius: 10px;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    /* ===== Header ===== */
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--muted);
+    }
+
+    /* ===== Form Container ===== */
+    .container {
+      background: var(--card);
+      width: 90%;
+      max-width: 500px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: var(--radius);
+      outline: none;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    /* ===== Submit Button ===== */
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>TechFest 2025 Registration</h1>
+    <p>Register now to join workshops, hackathons & fun events!</p>
+  </header>
+
+  <!-- ===== Registration Form ===== -->
+  <div class="container">
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label for="event">Select Event</label>
+      <select id="event" required>
+        <option value="">-- Choose an event --</option>
+        <option>Hackathon</option>
+        <option>AI Workshop</option>
+        <option>Web Design Contest</option>
+        <option>Photography Challenge</option>
+        <option>Robotics Race</option>
+      </select>
+
+      <label for="college">College Name</label>
+      <input type="text" id="college" placeholder="Enter your college name" required>
+
+      <label for="message">Any Message</label>
+      <textarea id="message" placeholder="Write something... (optional)"></textarea>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 TechFest | Organized by CSE Department</p>
+  </footer>
+
+</body>
+</html>

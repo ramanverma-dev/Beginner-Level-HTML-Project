@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    /* ===== Basic Setup ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ===== Header ===== */
+    header {
+      width: 100%;
+      background: #2563eb;
+      color: #fff;
+      padding: 18px 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Main Container ===== */
+    .container {
+      background: #fff;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    /* ===== Left Section ===== */
+    .contact-info {
+      background: #2563eb;
+      color: white;
+      flex: 1 1 40%;
+      padding: 40px 30px;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+
+    .contact-info p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .contact-info .info-item {
+      margin-bottom: 15px;
+    }
+
+    .info-item strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    /* ===== Form Section ===== */
+    .contact-form {
+      flex: 1 1 60%;
+      padding: 40px 30px;
+    }
+
+    .contact-form h2 {
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 4px rgba(37,99,235,0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background: #2563eb;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .contact-info, .contact-form {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Contact Us</header>
+
+  <div class="container">
+    <!-- Left Info Section -->
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>We’d love to hear from you! Whether you have a question, feedback, or collaboration idea — reach out anytime.</p>
+
+      <div class="info-item">
+        <strong>Email:</strong>
+        support@collegeportal.com
+      </div>
+      <div class="info-item">
+        <strong>Phone:</strong>
+        +91 98765 43210
+      </div>
+      <div class="info-item">
+        <strong>Address:</strong>
+        123 Knowledge Park, New Delhi, India
+      </div>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Enter subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 College Portal | Designed by Raman Verma
+  </footer>
+
+</body>
+</html>

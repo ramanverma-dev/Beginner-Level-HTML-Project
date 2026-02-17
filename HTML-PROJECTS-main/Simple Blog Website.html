@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog Website</title>
+  <style>
+    /* ====== Root Variables ====== */
+    :root {
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --card: #ffffff;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* ====== Global Styles ====== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: var(--accent);
+      color: white;
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #dbeafe;
+    }
+
+    nav {
+      background: #1e3a8a;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+
+    /* ===== Blog Posts ===== */
+    .posts {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .post {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 15px;
+    }
+
+    .post h2 {
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+
+    .post p {
+      color: var(--muted);
+      margin: 10px 0 15px;
+    }
+
+    .post a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .post a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      height: fit-content;
+    }
+
+    .sidebar h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin: 8px 0;
+    }
+
+    .sidebar ul li a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .sidebar ul li a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>My Simple Blog</h1>
+    <p>Thoughts, Ideas, and Stories</p>
+  </header>
+
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <!-- Blog Posts -->
+    <div class="posts">
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1522202195461-1f34f87c3f43?auto=format&fit=crop&w=900&q=60" alt="Post 1">
+        <h2>How to Stay Productive While Studying</h2>
+        <p>Staying focused while studying can be difficult, but with the right techniques and mindset, you can master productivity...</p>
+        <a href="#">Read More →</a>
+      </article>
+
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=60" alt="Post 2">
+        <h2>Top 5 Travel Destinations in 2025</h2>
+        <p>From the mountains of Switzerland to the beaches of Bali, here are the top places you must visit this year...</p>
+        <a href="#">Read More →</a>
+      </article>
+
+      <article class="post">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=60" alt="Post 3">
+        <h2>Learning to Code: A Beginner’s Journey</h2>
+        <p>Coding can feel overwhelming at first, but once you start building projects, it becomes one of the most rewarding skills...</p>
+        <a href="#">Read More →</a>
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>About Me</h3>
+      <p>Hi! I'm Raman, a student and blogger who loves writing about technology, lifestyle, and creativity.</p>
+
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Travel</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Lifestyle</a></li>
+      </ul>
+
+      <h3>Follow Me</h3>
+      <ul>
+        <li><a href="#">📘 Facebook</a></li>
+        <li><a href="#">🐦 Twitter</a></li>
+        <li><a href="#">📸 Instagram</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 My Simple Blog | Designed by Raman Verma</p>
+  </footer>
+
+</body>
+</html>

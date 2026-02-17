@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineScope – Movie Reviews</title>
+  <style>
+    /* ===== Root Variables ===== */
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #f59e0b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --radius: 12px;
+      --shadow: 0 8px 20px rgba(0,0,0,0.3);
+      --maxw: 1100px;
+    }
+
+    /* ===== Global Styles ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 16px;
+    }
+
+    header {
+      width: 100%;
+      max-width: var(--maxw);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 1rem;
+    }
+
+    /* ===== Search Bar ===== */
+    .search-bar {
+      background: var(--card);
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: var(--maxw);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .search-bar input {
+      width: 85%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .search-bar button {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* ===== Movie Cards ===== */
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: var(--maxw);
+      width: 100%;
+    }
+
+    .movie-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .movie-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .poster {
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .movie-info {
+      padding: 16px;
+    }
+
+    .movie-info h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .movie-info p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.9rem;
+    }
+
+    .rating {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #facc15;
+    }
+
+    .review {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .poster { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎬 CineScope</h1>
+    <p>Explore honest reviews of your favorite movies!</p>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search for a movie..." />
+    <button>Search</button>
+  </div>
+
+  <section class="movie-grid">
+    <!-- Movie 1 -->
+    <div class="movie-card">
+      <div class="poster" style="background-image: url('https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=60');"></div>
+      <div class="movie-info">
+        <h2>Inception</h2>
+        <p>Director: Christopher Nolan</p>
+        <p class="rating">⭐ 9.0/10</p>
+        <p class="review">A mind-bending masterpiece that dives deep into the power of dreams. 
+          The visuals, music, and story create an unforgettable experience.</p>
+      </div>
+    </div>
+
+    <!-- Movie 2 -->
+    <div class="movie-card">
+      <div class="poster" style="background-image: url('https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=800&q=60');"></div>
+      <div class="movie-info">
+        <h2>Interstellar</h2>
+        <p>Director: Christopher Nolan</p>
+        <p class="rating">⭐ 8.7/10</p>
+        <p class="review">A visually stunning sci-fi adventure that explores love, time, and survival. 
+          Emotional and intellectually engaging till the end.</p>
+      </div>
+    </div>
+
+    <!-- Movie 3 -->
+    <div class="movie-card">
+      <div class="poster" style="background-image: url('https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=60');"></div>
+      <div class="movie-info">
+        <h2>Avengers: Endgame</h2>
+        <p>Director: Russo Brothers</p>
+        <p class="rating">⭐ 8.5/10</p>
+        <p class="review">A spectacular finale to the Infinity Saga, filled with action, emotions, 
+          and fan-favorite moments. A true celebration of the Marvel universe.</p>
+      </div>
+    </div>
+
+    <!-- Movie 4 -->
+    <div class="movie-card">
+      <div class="poster" style="background-image: url('https://images.unsplash.com/photo-1558980664-10ea0b032ef2?auto=format&fit=crop&w=800&q=60');"></div>
+      <div class="movie-info">
+        <h2>Joker</h2>
+        <p>Director: Todd Phillips</p>
+        <p class="rating">⭐ 8.9/10</p>
+        <p class="review">A haunting character study of a man’s descent into madness. 
+          Joaquin Phoenix delivers a career-defining performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 CineScope. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

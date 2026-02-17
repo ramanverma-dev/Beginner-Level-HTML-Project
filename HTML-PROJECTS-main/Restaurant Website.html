@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taste Haven | Restaurant Website</title>
+  <style>
+    /* ======== BASIC STYLES ======== */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf4;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff7043;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 5px 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 30px 10%;
+    }
+
+    h2 {
+      color: #e64a19;
+      border-bottom: 2px solid #e64a19;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #ff7043;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
+    /* ======== MENU CARD STYLE ======== */
+    .menu-category {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+      padding: 20px;
+    }
+
+    .menu-category ul li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #ccc;
+      padding: 6px 0;
+    }
+
+    .menu-category ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* ======== CONTACT ======== */
+    #contact p {
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* ======== RESPONSIVE ======== */
+    @media (max-width: 768px) {
+      section {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>🍴 Taste Haven Restaurant 🍴</h1>
+    <p>Delicious Food | Great Ambience | Quick Service</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ================= HOME SECTION ================= -->
+  <section id="home">
+    <h2>Welcome to Taste Haven</h2>
+    <p>Welcome to <b>Taste Haven</b>, where flavor meets comfort! Enjoy freshly prepared meals with the perfect blend of spices and love.</p>
+  </section>
+
+  <!-- ================= MENU SECTION ================= -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+
+    <div class="menu-category">
+      <h3>🍕 Starters</h3>
+      <ul>
+        <li><span>Garlic Bread</span><span>₹80</span></li>
+        <li><span>Veg Spring Rolls</span><span>₹120</span></li>
+        <li><span>French Fries</span><span>₹100</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <h3>🍝 Main Course</h3>
+      <ul>
+        <li><span>Paneer Butter Masala</span><span>₹180</span></li>
+        <li><span>Veg Biryani</span><span>₹150</span></li>
+        <li><span>Chicken Curry</span><span>₹220</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <h3>🍨 Desserts</h3>
+      <ul>
+        <li><span>Gulab Jamun</span><span>₹60</span></li>
+        <li><span>Chocolate Ice Cream</span><span>₹90</span></li>
+        <li><span>Brownie with Ice Cream</span><span>₹120</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Founded in 2010, <b>Taste Haven</b> is known for serving fresh, high-quality meals in a cozy environment. Our chefs prepare every dish with passion and perfection to make your dining experience special.</p>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>📍 Address:</strong> 123, MG Road, Lucknow, India</p>
+    <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+    <p><strong>✉️ Email:</strong> info@tastehaven.com</p>
+    <p><strong>🕓 Timings:</strong> 10:00 AM – 11:00 PM</p>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2025 Taste Haven Restaurant | Designed by Raman Verma</p>
+  </footer>
+
+</body>
+</html>
+

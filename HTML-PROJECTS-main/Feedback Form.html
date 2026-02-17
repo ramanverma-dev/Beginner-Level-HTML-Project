@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    /* ===== Basic Setup ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* ===== Form Container ===== */
+    .feedback-container {
+      background: #fff;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      padding: 30px 25px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 500;
+      color: #111;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 6px rgba(37,99,235,0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    /* ===== Rating Section ===== */
+    .rating {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .rating input:checked ~ label,
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: gold;
+    }
+
+    /* ===== Button ===== */
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1e3a8a;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      color: #fff;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .feedback-container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="feedback-container">
+    <h1>Feedback Form</h1>
+    <p>We value your feedback! Please take a moment to share your thoughts with us.</p>
+
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="experience">How was your experience?</label>
+      <select id="experience" required>
+        <option value="">-- Select --</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+      </select>
+
+      <label>Rate Us</label>
+      <div class="rating">
+        <input type="radio" name="star" id="star5"><label for="star5">★</label>
+        <input type="radio" name="star" id="star4"><label for="star4">★</label>
+        <input type="radio" name="star" id="star3"><label for="star3">★</label>
+        <input type="radio" name="star" id="star2"><label for="star2">★</label>
+        <input type="radio" name="star" id="star1"><label for="star1">★</label>
+      </div>
+
+      <label for="comments">Additional Comments</label>
+      <textarea id="comments" placeholder="Write your feedback here..."></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Feedback Portal | Designed by Raman Verma
+  </footer>
+
+</body>
+</html>

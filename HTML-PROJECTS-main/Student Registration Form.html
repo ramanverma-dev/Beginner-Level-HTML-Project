@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    /* ===== Basic Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      background: white;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 5px rgba(37,99,235,0.4);
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    /* ===== Gender Radio ===== */
+    .gender-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .gender-group label {
+      font-weight: 500;
+    }
+
+    /* ===== Button ===== */
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Student Registration Form</h1>
+
+    <form>
+      <label for="fname">Full Name</label>
+      <input type="text" id="fname" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label>Gender</label>
+      <div class="gender-group">
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required>
+
+      <label for="course">Course</label>
+      <select id="course" required>
+        <option value="">-- Select Course --</option>
+        <option>B.Tech CSE</option>
+        <option>B.Sc IT</option>
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>M.Tech</option>
+      </select>
+
+      <label for="address">Address</label>
+      <textarea id="address" placeholder="Enter your address" required></textarea>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Student Registration Portal | Designed by Raman Verma</p>
+  </footer>
+
+</body>
+</html>
